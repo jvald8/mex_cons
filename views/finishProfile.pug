@@ -1,0 +1,23 @@
+<!-- https://github.com/pugjs/pug -->
+
+doctype html
+html(lang="en")
+	head
+		title= "Finish your Profile!"
+	body
+		h1= "Welcome to Match Dogs " + name + "!"
+		h2= "Please finish your profile below to start finding your dog!"
+
+		form(action="/api/finishProfile/", method="POST")
+			label= "Enter your email"
+			br
+			input(type="text",name="email")
+			br
+			label= "Enter your location"
+			br
+			input(type="text",name="location")
+			br
+			input(type="submit")
+		br
+
+		img(src= photo)

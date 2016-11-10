@@ -1,0 +1,38 @@
+<!-- https://github.com/pugjs/pug -->
+
+doctype html
+html(lang="en")
+	head
+		title= "Home"
+	body
+		h1= "Welcome " + user.givenName + "!"
+		h2= "Do you have the following forms of identification?"
+
+		form(action="/api/addRestOfInfo", method="POST")
+			input(type="hidden", name="human_id", value= user.human_id)
+			label= "Applicant's Original American Birth Certificate?"
+			br
+			input(type="checkbox",name="birth_certificate")
+			br
+			label= "Government ID such as Driver's License or ID card"
+			br
+			input(type="checkbox",name="government_id")
+			br
+			label= "At least one of your parents' original birth certificate, or valid Mexican Passport."
+			br
+			input(type="checkbox",name="parent_certificate")
+			br
+			label= "Copy of Parents' Marriage License, if married?"
+			br
+			input(type="checkbox",name="marriage_license")
+			br
+			label= "Photocopy of parents' official valid drivers license, both sides"
+			br
+			input(type="checkbox",name="parent_license")
+			br
+			label= "Photocopy of two witnesses' official valid drivers license, both sides"
+			br
+			input(type="checkbox",name="witness_license")
+			br
+			input(type="submit", value="Save")
+		br
